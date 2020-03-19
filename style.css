@@ -1,0 +1,20 @@
+
+body {
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  color: #FFFFFF;
+  text-align: left;
+
+  animation: relaxingBackground 24s ease infinite;
+  background: linear-gradient(234deg, #80b2a5, #3ba9d2);
+  background-size: 400% 400%;
+}
+
+
+
+@keyframes relaxingBackground {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
