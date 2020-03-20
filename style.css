@@ -1,20 +1,74 @@
-
 body {
 
   font-family: Helvetica, Arial, sans-serif;
   font-size: 28px;
   color: #FFFFFF;
   text-align: left;
+  padding: 10px;
 
   animation: relaxingBackground 24s ease infinite;
   background: linear-gradient(234deg, #80b2a5, #3ba9d2);
   background-size: 400% 400%;
 }
 
+#confinementThingsContainer {
+  text-align: left;
+}
+
+p {
+  margin-block-end: 10px;
+}
+
+.thing {
+  color: #FFFFFF;
+  transition: color 0.2s;
+}
+
+.thing:hover {
+  color: pink;
+  transition: color 1s;
+  cursor: none;
+}
+
+#addPrompt {
+  display: inline;
+}
 
 
 @keyframes relaxingBackground {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
+}
+
+#confinement-form, button#submit-form {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  color: #FFFFFF;
+}
+
+#confinement-form {
+  display: none;
+}
+
+input {
+  border-bottom: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  transition: width 0.25s;
+  text-align:left;
+}
+
+button#submit-form {
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+
+
+::placeholder {
+  color: #FFFFFF;
 }

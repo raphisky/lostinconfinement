@@ -9,11 +9,14 @@
   <meta name="description" content="aujourd'hui en confinement je vais...">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="stylesheet" href="form-reset.css">
   <link rel="stylesheet" href="style.css">
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -21,10 +24,24 @@
 <h1>Lost in confinement</h1>
 
 <p id="confinementThingsContainer">Aujourd'hui en confinement, j'ai&nbsp;</p>
+<div id="addPrompt"> et toi ?</div>
+
+<form id="confinement-form">
+
+  <div>
+    <label>j'ai...</label>
+    <input id="newThingInput" type="text" name="confinementthing" placeholder=""/>
+
+    <label>...à</label>
+    <input type="text" name="confinementthinghour" placeholder=""/>
+    <button type="submit"id="submit-form">+</button>
+
+  </div>
 
 
+</form>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="lostinconfinement.js"></script>
+
+<script src="lostinconfinement.js"></script>
 </body>
 </html>
