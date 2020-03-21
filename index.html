@@ -26,21 +26,27 @@
 <p id="confinementThingsContainer">Aujourd'hui en confinement, j'ai&nbsp;</p>
 <div id="addPrompt"> et toi ?</div>
 
-<form id="confinement-form">
+<div id="confinement-form-container">
+  <span id="closePrompt"></span>
 
-  <div>
-    <label>j'ai...</label>
-    <input id="newThingInput" type="text" name="confinementthing" placeholder=""/>
+  <form id="confinement-form">
 
-    <label>...à</label>
-    <input type="text" name="confinementthinghour" placeholder=""/>
-    <button type="submit"id="submit-form">+</button>
+      <div>
+        <label>j'ai</label> <br>
+        <textarea id="newThingInput" name="confinementthing" maxlength="101" rows="4" cols="80"></textarea>
+        <!-- <input id="newThingInput" type="text" name="confinementthing" placeholder=""/> -->
+        <br>
+        <label>à</label>
+        <input id="newHourInput" maxlength="5" type="text" name="confinementthinghour" placeholder="16h20"/>
+        <br>
+        <button type="submit"id="submit-form">envoyer</button>
+      </div>
 
-  </div>
+  </form>
+</div>
 
 
-</form>
-
+<br><br><br><br>
 
 <script src="lostinconfinement.js"></script>
 </body>

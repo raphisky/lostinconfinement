@@ -34,6 +34,23 @@ $('#submit-form').on('click', function(e) {
 })
 
 
+// INTERACTIONS
+
+$('#addPrompt').click(function() {
+  $('#confinement-form-container').show();
+})
+
+$('#closePrompt').click(function() {
+  $('#confinement-form-container').hide();
+})
+
+$('#submit-form').click(function() {
+  var tempThingToAdd = $('#newThingInput').val();
+  var tempThingHourToAdd = $('#newHourInput').val();
+  var thingSpan = document.createElement('span');
+  thingSpan.innerHTML = tempThingToAdd + " à " + tempThingHourToAdd + ", ";
+  spawnConfinementThing(thingSpan);
+})
 
 // LOAD ACTIVITIES
 
@@ -50,9 +67,8 @@ $.getJSON("https://spreadsheets.google.com/feeds/list/1DpU7Fni82j2hXfloJnnmUBmTP
   return confinementThings;
 });
 
-$('#addPrompt').click(function() {
-  $('#confinement-form').show();
-})
+
+
 
 
 function displayConfinementThings() {
@@ -74,6 +90,6 @@ function spawnAddThingPrompt() {
 function spawnConfinementThing(el) {
   setTimeout(function() {
     $('#confinementThingsContainer').append(el);
-    $('span').addClass("thing");
+    $('#confinementThingsContainer span').addClass("thing");
   }, 300);
 }

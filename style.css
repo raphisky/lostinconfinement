@@ -5,6 +5,7 @@ body {
   color: #FFFFFF;
   text-align: left;
   padding: 10px;
+  padd
 
   animation: relaxingBackground 24s ease infinite;
   background: linear-gradient(234deg, #80b2a5, #3ba9d2);
@@ -30,10 +31,20 @@ p {
   cursor: none;
 }
 
-#addPrompt {
-  display: inline;
+#addPrompt:hover {
+  cursor: pointer;
 }
 
+#addPrompt {
+  display: inline;
+  float: right;
+  animation: blinkingBorder 2s linear infinite;
+  border-bottom: 2px solid #FFFFFF;
+}
+
+@keyframes blinkingBorder {
+  50% { opacity: 0.1;}
+}
 
 @keyframes relaxingBackground {
     0%{background-position:0% 50%}
@@ -47,28 +58,83 @@ p {
   color: #FFFFFF;
 }
 
-#confinement-form {
+#confinement-form-container {
   display: none;
+  width: 320px;
+  height: 250px;
+  border: 2px solid #FFFFFF;
+  border-radius: 7px;
+  position: fixed;
+  right: 10px;
+  top: 20vh;
+  padding: 10px;
+  padding-top: 20px;
+
+  animation: relaxingBackground 24s ease infinite;
+  background: linear-gradient(234deg, #80b2a5, #3ba9d2);
+  background-size: 400% 400%;
 }
+
 
 input {
   border-bottom: 2px solid #FFFFFF;
+  width: 100%;
   color: #FFFFFF;
   transition: width 0.25s;
   text-align:left;
+
+}
+
+#newHourInput {
+  width: 83px;
+}
+
+textarea {
+  margin-top: 5px;
+  width: 95%;
+  border-radius: 5px;
+  color: #FFFFFF;
+  padding: 5px;
+  border: 2px solid #FFFFFF;
+}
+
+textarea:focus {
+  outline: none;
 }
 
 button#submit-form {
-  border-radius: 50%;
-  border: 2px solid #FFFFFF;
+  margin-top: 10px;
+  border-radius: 2px;
+  border-bottom: 2px solid #FFFFFF;
   display: inline-block;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
+  width: auto;
+  height: auto;
+  padding: 3px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+#closePrompt {
+  border-bottom: 3px solid #FFFFFF;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+
+}
+
+button#submit-form:hover {
+  background-color: #FFFFFF;
+  transition: background-color 0.3s;
+  color: #4EACC5;
 }
 
 
 
 ::placeholder {
-  color: #FFFFFF;
+  color: rgba(255,255,255,0.5);
 }
