@@ -19,7 +19,7 @@ $.fn.serializeObject = function()
 
 
 var $form = $('form#confinement-form'),
-    url = 'https://script.google.com/macros/s/AKfycbz7eLgipNDXKYLabzwmXVokAVhxWh4rJDB50tTUYdgQcVJf6Td3/exec'
+    url = 'https://script.google.com/macros/s/AKfycbwd31sg_vPl7YvRLxxCNJHXns3M3kVHwFw2aMVXXedo_HplG-I/exec'
 
 $('#submit-form').on('click', function(e) {
   e.preventDefault();
@@ -58,7 +58,7 @@ var confinementThings = [];
 var confinementThingsHour = [];
 
 
-$.getJSON("https://spreadsheets.google.com/feeds/list/1-efporH5mrVFGUNVq9YKCRCW-FWKwO2IcTnK_p16yFQ/od6/public/values?alt=json", function(data) {
+$.getJSON("https://spreadsheets.google.com/feeds/list/1DpU7Fni82j2hXfloJnnmUBmTPbZ0eHQi7FklWcl2-8M/od6/public/values?alt=json", function(data) {
   for (var el in data.feed.entry) {
     confinementThings.push(data.feed.entry[el].gsx$confinementthing.$t);
     confinementThingsHour.push(data.feed.entry[el].gsx$confinementthinghour.$t);
