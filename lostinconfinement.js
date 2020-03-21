@@ -60,8 +60,11 @@ var confinementThingsHour = [];
 
 $.getJSON("https://spreadsheets.google.com/feeds/list/1-efporH5mrVFGUNVq9YKCRCW-FWKwO2IcTnK_p16yFQ/od6/public/values?alt=json", function(data) {
   for (var el in data.feed.entry) {
-    confinementThings.push(data.feed.entry[el].gsx$confinementthing.$t);
-    confinementThingsHour.push(data.feed.entry[el].gsx$confinementthinghour.$t);
+    var isOkToPublish = data.feed.entry[el].gsx$validation.$t;
+    if (isOkToPublish == "ok") {
+      confinementThings.push(data.feed.entry[el].gsx$confinementthing.$t);
+      confinementThingsHour.push(data.feed.entry[el].gsx$confinementthinghour.$t);
+    }
   }
   displayConfinementThings();
   return confinementThings;
